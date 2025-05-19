@@ -73,7 +73,6 @@ void loop() {
 
 }
 
-// Movement functions
 void moveForward() {
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
