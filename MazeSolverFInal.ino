@@ -1,3 +1,7 @@
+#include "mario_theme.h"
+#include <Arduino.h>
+#include "PacmanTheme.h"
+#include "pitches.h"
 
 const int in1 = 2;
 const int in2 = 3;
@@ -12,14 +16,16 @@ const int centerSensor = 11;
 const int rightSensor = 12;
 const int wallSensor = 8;
 
-const int forwardSpeed = 70;
+const int forwardSpeed = 65;
 const int turningSpeed = 70;
 const int turnDelay = 75;
 const int uTurnDelay = 50;
+int buzzerPin = A1;
 
 void setup() {
   Serial.begin(9600);
-
+  pinMode(buzzerPin, OUTPUT); 
+  playMarioTheme(buzzerPin);
   pinMode(leftSensor, INPUT);
   pinMode(centerSensor, INPUT);
   pinMode(rightSensor, INPUT);
@@ -45,10 +51,7 @@ void loop() {
   if (wallV == LOW) {
     stopMotors();
     Serial.println("Wall detected");
-  }
-  else if (leftV == HIGH && centerV == LOW && rightV == HIGH) {
-    stopMotors();
-    Serial.println("Stop");
+        playPacmanTheme(buzzerPin);  
   }
   else if (leftV == HIGH) {
     turnLeft();
@@ -73,6 +76,7 @@ void loop() {
 
 }
 
+// Movement functions
 void moveForward() {
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
