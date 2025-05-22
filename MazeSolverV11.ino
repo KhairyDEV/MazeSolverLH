@@ -8,23 +8,23 @@ const int in2 = 3;
 const int in3 = 4;
 const int in4 = 5;
 const int ena = 9;
-const int enb = 10;
+const int enb = 10; 
 
 
-const int leftSensor = 13;
+const int leftSensor = 13; //sensor pins
 const int centerSensor = 11;
 const int rightSensor = 12;
 const int wallSensor = 8;
 
-const int forwardSpeed = 65;
+const int forwardSpeed = 65; // RPM adjustments
 const int turningSpeed = 70;
-const int turnDelay = 75;
+const int turnDelay = 75; //turns delay in ms
 const int uTurnDelay = 50;
-int buzzerPin = A1;
+int buzzerPin = A1; //buzzer pin
 
 void setup() {
   Serial.begin(9600);
-  pinMode(buzzerPin, OUTPUT); 
+  pinMode(buzzerPin, OUTPUT); //defining if these pins do outputs or inputs
   playMarioTheme(buzzerPin);
   pinMode(leftSensor, INPUT);
   pinMode(centerSensor, INPUT);
@@ -43,14 +43,14 @@ void setup() {
 }
 
 void loop() {
-  bool leftV = digitalRead(leftSensor);
+  bool leftV = digitalRead(leftSensor); //making sesnors send digital data
   bool centerV = digitalRead(centerSensor);
   bool rightV = digitalRead(rightSensor);
   bool wallV = digitalRead(wallSensor);
 
   if (wallV == LOW) {
     stopMotors();
-    Serial.println("Wall detected");
+    Serial.println("Wall detected");  // decisions and calling functions 
         playPacmanTheme(buzzerPin);  
   }
   else if (leftV == HIGH) {
