@@ -1,6 +1,7 @@
-# Arduino Maze-Solving Robot (Left-Hand Rule with IR Sensors and Music)
+# Arduino Maze-Solving Robot (Left-Hand Rule with IR Sensors)
 
-This Arduino-based robot navigates mazes using the **left-hand rule** algorithm. It relies on four IR sensors for path detection and wall sensing, and it plays familiar theme music to indicate system states. On startup, the robot plays the Mario theme. If a wall is detected in front, it stops and plays the Pac-Man theme.
+This Arduino-based robot navigates mazes using the **left-hand rule** algorithm. It relies on four IR sensors for path detection and wall sensing, and it plays familiar theme music to indicate system states. On startup, the robot plays the Mario theme. If a wall is detected in front, it stops and plays the Pac-Man theme
+Video of our maze solver robot: https://drive.google.com/drive/folders/13RjZS8ftY8RHCtmR9AqnznO9eq2iwcZu?usp=drive_link
 
 ## Features
 
